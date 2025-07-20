@@ -256,3 +256,15 @@ describe('DELETE /api/posts/:id', () => {
     expect(res.status).toBe(401);
   });
 }); 
+const request = require('supertest');
+const app = require('../app'); // your Express app
+const request = require('supertest');
+const app = require('../app');
+
+describe('GET /api/users', () => {
+  it('should return list of users', async () => {
+    const res = await request(app).get('/api/users');
+    expect(res.statusCode).toEqual(200);
+    expect(Array.isArray(res.body)).toBeTruthy();
+  });
+});
